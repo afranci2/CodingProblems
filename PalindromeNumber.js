@@ -1,4 +1,4 @@
-x = 121
+let x = 121
 let same;
 for (let i = 0; i < x.length; i++) {
     if (same === false) {

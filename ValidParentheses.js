@@ -1,14 +1,14 @@
-s = "()"
+let s = "()"
 const openings = [];
-for (let i = 0; i < s.length; i++) {
-    if (s[i] === '(' || s[i] === '[' || s[i] === '{') {
-        openings.push(s[i]);
+for (const element of s) {
+    if (element === '(' || element === '[' || element === '{') {
+        openings.push(element);
     } else {
-        if (s[i] === ')') {
+        if (element === ')') {
             if (openings.pop() !== '(') return false;
-        } else if (s[i] === ']') {
+        } else if (element === ']') {
             if (openings.pop() !== '[') return false;
-        } else if (s[i] === '}') {
+        } else if (element === '}') {
             if (openings.pop() !== '{') return false;
         }
     }
