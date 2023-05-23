@@ -14,6 +14,8 @@ def productExceptSelf(nums):
     return ans
 
 
+
+
 print(productExceptSelf([2,1,3,4]))
 nums = [2,1,3,4]
 left = [1,2,2,6]
