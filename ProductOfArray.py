@@ -10,10 +10,10 @@ def productExceptSelf(nums):
         print(ans)
         print(left)
         print(right)
-        print(product1)
+       
         product1 = left[i]
         product2 = right[i]
-
+        print(product1)
         ans.append(product1 * product2)
         print(ans)
 
