@@ -1,18 +1,28 @@
 def dailyTemperatures(temperatures):
-    new_list = [73,76,72,69,71,75,74,73]
-    ans = []
+    ans = [0]*len(temperatures)
+    stack = []
+    j=1
     for i in range(len(temperatures)):
-        print(new_list)
-        first = new_list[len(temperatures)]
-        second = new_list[len(temperatures)-1]
-        print(new_list)
-        while first > second and new_list:
-            j=0
-            ans.append(j)
-            new_list.pop()
+        print("hey")
+        print("ans:", ans)
+        print("stack:",stack)
+        print("i:", i)
+        print("this is current temp:", temperatures[i])
+
+        while stack and temperatures[i]<stack[-1]:
+            print(temperatures[i], stack[-1])
+            print("j:", j)
+            print("ans:", ans)
+            print("stack:",stack)
+            stack.pop()
             j=j+1
-        ans.append(0)
+        ans[i-1] = j
+        j=1
+        
+        stack.append(temperatures[i])
     return ans
 
+print(dailyTemperatures([73,74,75,71,69,72,76,73]))
 
-print(dailyTemperatures([73,74,75,71,69,72,76]))
+
+expect = [1,0,0,2,1,0,0,0,0,0]
