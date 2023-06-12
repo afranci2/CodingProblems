@@ -1,14 +1,19 @@
 def twoSum(numbers, target):
-    valid_index=[]
-    for i in range(len(numbers)):
-        for j in range(len(numbers)):
-            print(numbers[i], numbers[j])
+    class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        ans = []
+        left = 0
+        right = len(numbers)-1
+        for i in range(right):
+            number = numbers[left] + numbers[right]
+            if number > target:
+                right = right - 1
+            elif number<target:
+                left = left+1
 
-            if (numbers[i]+numbers[j]) == target and i != j:
-                valid_index.append(i+1)
-                valid_index.append(j+1)
-                return valid_index
+        ans.append(left+1)
+        ans.append(right+1)
 
-
-
+        return ans
+        
 print(twoSum([1,2,3,4,4,9,56,90], 8))
